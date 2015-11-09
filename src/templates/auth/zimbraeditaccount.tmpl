@@ -1,0 +1,17 @@
+{% from "macros/fields.tmpl" import render_input_field, render_password_field,
+                                    render_submit %}
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}Edit account{% endblock %}
+
+{% block content %}
+  <h3>Add Alias</h3>
+    <a href="{{ url_for('auth.newaliaszimbra', id=id) }}">Add Alias</a>
+        <form method="POST" id="register-form">
+    {{ form.hidden_tag() }}
+    {{ render_input_field(form.email,value=name) }}
+    {{ render_input_field(form.displayname, value=displayname) }}
+    {{ render_submit() }}
+  </form>
+{% endblock %}
+
